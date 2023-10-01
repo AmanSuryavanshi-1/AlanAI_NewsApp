@@ -1,13 +1,23 @@
 import { Card,CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Typography,Button } from '@material-ui/core'
 import React from 'react'
-// import NewsCards from './NewsCards'
+// import classNames from 'classnames';
 import useStyles from './style'
+import { useState,useEffect } from 'react'
 
-const NewsCard = ({ article: { description, publishedAt, source, title, url, urlToImage }, i }) => {
+const NewsCard = ({ article: { description, publishedAt, source, title, url, urlToImage }, i, activeArticle }) => {
   const classes = useStyles();
+  const [elementRefs, setElementRefs] = useState([]);
+  // this is to set refs for all elements
+  // useEffect(() => {
+  //   setElementRefs((refs) =>
+  //     Array(20)
+  //       .fill()
+  //       .map((_, j) => refs[j] || createRef())
+  //   );
+  // }, []);
   return (
     <div>
-      <Card className={classes.card}>
+      <Card ref={elementRefs[i]} className={ activeArticle === i ? classes.activeCard: classes.card}>
         <CardActionArea href={url} target="_blank"> 
           <CardMedia className={classes.media} image={urlToImage || 'https://i.ytimg.com/vi/3LgKoQByVQE/maxresdefault.jpg'}/>
           <div className={classes.details}>

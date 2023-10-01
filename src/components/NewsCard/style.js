@@ -18,7 +18,7 @@ export default makeStyles({
         borderBottom: '10px solid white',
     },
     activeCard:{
-        borderBottom: '10px solid #2289a',
+        borderBottom: '10px solid #22289a',
     },
     grid: {
         display:'flex',
