@@ -2,19 +2,27 @@ import { Card,CardActionArea, CardActions, CardContent, CardHeader, CardMedia, T
 import React from 'react'
 // import classNames from 'classnames';
 import useStyles from './style'
-import { useState,useEffect } from 'react'
+import { useState,useEffect, createRef } from 'react'
 
 const NewsCard = ({ article: { description, publishedAt, source, title, url, urlToImage }, i, activeArticle }) => {
   const classes = useStyles();
+
+  //implementing auto scroll
   const [elementRefs, setElementRefs] = useState([]);
+  const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop -50);
   // this is to set refs for all elements
-  // useEffect(() => {
-  //   setElementRefs((refs) =>
-  //     Array(20)
-  //       .fill()
-  //       .map((_, j) => refs[j] || createRef())
-  //   );
-  // }, []);
+  useEffect(() => {
+    setElementRefs((refs) =>
+      Array(20)
+        .fill()
+        .map((_, j) => refs[j] || createRef()));
+  }, []);
+
+  useEffect(() => {
+    if(i===activeArticle && elementRefs[activeArticle]){
+      scrollToRef(elementRefs[activeArticle]);
+    }
+  }, [i, activeArticle, elementRefs]);
   return (
     <div>
       <Card ref={elementRefs[i]} className={ activeArticle === i ? classes.activeCard: classes.card}>
