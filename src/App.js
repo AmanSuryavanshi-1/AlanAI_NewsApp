@@ -6,8 +6,8 @@ import useStyles from './styles'
 const App = () => {
     const[newsArticles, setNewsArticles] = useState([]);
     const[activeArticle, setActiveArticle] = useState(-1);
-    // const alanKey = 'ca307562e7a2537f15277d25e9786be42e956eca572e1d8b807a3e2338fdd0dc/stage';
-    const alanKey ='b7c5003f6518b3a80b4d1ca9f98631012e956eca572e1d8b807a3e2338fdd0dc/stage';
+    const alanKey = 'ca307562e7a2537f15277d25e9786be42e956eca572e1d8b807a3e2338fdd0dc/stage';
+    // const alanKey ='b7c5003f6518b3a80b4d1ca9f98631012e956eca572e1d8b807a3e2338fdd0dc/stage';
     const classes = useStyles();
     useEffect(() => {
         alanBtn({
