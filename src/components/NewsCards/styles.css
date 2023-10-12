@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+
+.container{
+  padding-left: 11%;
+  /* color: black; */
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 105%;
+  height: 45vh;
+  border-radius: 10px;
+  color: black;
+  background-color: #2196f3;
+  color: rgb(216, 216, 216);
+}
+
+.content {
+  margin: 10px;
+}
+
+.content_heading {
+  color: rgb(255, 255, 255);
+  font-family: 'Cinzel', serif;
+  text-shadow: 5px 5px 5px #001C30;
+  /* font-size: larger; */
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card:hover {
+  /* background-color: #000001; */
+  cursor: pointer;
+}
+
