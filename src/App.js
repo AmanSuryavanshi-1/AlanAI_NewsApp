@@ -10,33 +10,6 @@ import { Routes, Route } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
 import Navbar from './components/Navbar/Navbar.jsx';
 import News from './components/AllNews/News.jsx';
-// const handleNavigation = (section) => {
-//   switch (section) {
-//       case 'home':
-//           window.location.href = '/';
-//           break;
-//       case 'entertainment':
-//           window.location.href = '/entertainment';
-//           break;
-//       case 'business':
-//           window.location.href = '/business';
-//           break;
-//       case 'health':
-//           window.location.href = '/health';
-//           break;
-//       case 'science':
-//           window.location.href = '/science';
-//           break;
-//       case 'sports':
-//           window.location.href = '/sports';
-//           break;
-//       case 'technology':
-//           window.location.href = '/technology';
-//           break;
-//       default:
-//           console.log('Invalid section:', section);
-//   }
-// };
 
 const App = () => {
     const[newsArticles, setNewsArticles] = useState([]);
@@ -74,26 +47,7 @@ const App = () => {
             // Handle the command to open the home page
             handleOpenHomePage();
             break;
-          // case'openEntertainment' :
-          //   handleOpenCategory('entertainment');
-          //   break;
-          // case 'openBusiness':
-          //   handleOpenCategory('business');
-          //   break;
-          // case 'openHealth':
-          //   handleOpenCategory('health');
-          //   break;
-          // case 'openScience':
-          //   handleOpenCategory('science');
-          //   break;
-          // case 'openSports':
-          //   handleOpenCategory('sports');
-          //   break;
-          // case 'openTechnology':
-          //   handleOpenCategory('technology');
-          //   break;
-      
-      //     break;
+          
           default:
             break;
         }
@@ -103,10 +57,7 @@ const App = () => {
       const handleOpenNews = (category) => {
         window.location.href = `/${category.toLowerCase()}`;
       };
-  // const handleOpenCategory = (category) => {
-  //   const encodedCategory = encodeURIComponent(category);
-  //   window.location.href = `/${encodedCategory}`;
-  // };
+  
   const handleOpenHomePage = () => {
     // Perform actions to open the home page
     // For example, redirect to the home route
