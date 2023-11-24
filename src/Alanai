@@ -1,0 +1,143 @@
+
+// // play('Welcome to the Alan AI News Reader App by Rehan Khalil')
+
+// intent('What does this app do?', 'What can I do here?', 
+//       reply('This is a news project.'));
+
+
+// intent('Who created you', 
+//       reply('i am a virtual assistant created by aman suryavanshi'));
+//  const API_KEY = '3fd4a5e6fe19405489cc49ea3f5b8bcc';
+// //const API_KEY ='520cbc30d20543ce97fc791efdbed1a8';
+// let savedArticles = [];
+
+// // News by Source
+// intent('Give (me |)(the |) news from $(source* (.*))', (p) => {
+//     let NEWS_API_URL = `https://newsapi.org/v2/top-headlines?apiKey=${API_KEY}`;
+    
+//     if(p.source.value) {
+//         NEWS_API_URL = `${NEWS_API_URL}&sources=${p.source.value.toLowerCase().split(" ").join('-')}`
+//     }
+    
+//     api.request(NEWS_API_URL, {headers: {"user-agent": 'user agent' }}, (error, response, body) => {
+//         console.log('body',body)
+
+//         const { articles } = JSON.parse(body);
+//         if(!articles.length) {
+//             p.play('Sorry, please try searching for news from a different source');
+//             return;
+//         }
+        
+//         savedArticles = articles;
+        
+//         p.play({ command: 'newsHeadlines', articles });
+//         p.play(`Here are the (latest|recent) news from ${p.source.value}.`);
+  
+//         p.play(`Would you like me to read the news from ${p.source.value}`);
+//         p.then(confirmation);
+//     });
+// })
+
+// // News by Term
+// // not able to call by Give latest news about | show me news realted to fix it
+// intent('(What\'s up with | Give latest news about | show me news realted to | about ) $(term* (.*))', (p) => {
+//     let NEWS_API_URL = `https://newsapi.org/v2/everything?apiKey=${API_KEY}`;
+    
+//     if(p.term.value) {
+//         NEWS_API_URL = `${NEWS_API_URL}&q=${p.term.value}`
+//     }
+    
+//     api.request(NEWS_API_URL, {headers: {"user-agent": 'user agent' }}, (error, response, body) => {
+//         console.log('body',body)
+
+//         const { articles } = JSON.parse(body);
+//         if(!articles.length) {
+//             p.play('Sorry, please try searching for something else');
+//             return;
+//         }
+        
+//         savedArticles = articles;
+        
+//         p.play({ command: 'newsHeadlines', articles });
+//         p.play(`Here are the (latest|recent) articles on ${p.term.value}.`);
+  
+//         p.play('Would you like me to read the news');
+//         p.then(confirmation);
+//     });
+// })
+
+// // News by Categories
+
+// const CATEGORIES = ['business', 'entertainment', 'general', 'health','science','sports','technology'];
+// const CATEGORIES_INTENT = `${CATEGORIES.map((category) => `${category}~${category}`).join('|')}`;
+
+// intent(`(show|what is|tell me|what's|what are|what're|read|give) (the|) (recent|latest|" ") $(N news|headlines) (related to| in|about|on|) $(C~ ${CATEGORIES_INTENT})`,
+//   `(read|show|get|bring me|give me) (the|top|" ") (recent|latest|" ") $(C~ ${CATEGORIES_INTENT}) $(N news|headlines)`, (p) => {
+//     let NEWS_API_URL = `https://newsapi.org/v2/top-headlines?apiKey=${API_KEY}&country=in`;
+    
+//     if(p.C.value) {
+//         NEWS_API_URL = `${NEWS_API_URL}&category=${p.C.value}`
+//     }
+    
+//     api.request(NEWS_API_URL, {headers: {"user-agent": 'user agent' }}, (error, response, body) => {
+//         console.log('body',body)
+
+//         const { articles } = JSON.parse(body);
+//         if(!articles.length) {
+//             p.play('Sorry, please try searching for a different category.');
+//             return;
+//         }
+        
+//         savedArticles = articles;
+        
+//         p.play({ command: 'newsHeadlines', articles });
+  
+//         if(p.C.value) {
+//         p.play(`Here are the (latest|recent) articles on ${p.C.value}.`);
+//     }else{
+//         p.play(`Here are the (latest|recent) news`);
+//     }
+//         p.play('Would you like me to read the headlines?');
+//         p.then(confirmation);
+//     });
+// });
+
+// // Navbar commands
+// intent('Open (the|) (news|) (related to| in| about| on|) entertainment', (p) => {
+//     p.play({ command: 'openNews', category: 'entertainment' });
+// });
+
+// intent('Open (the|) (home| entertainment| health| science| sports| Technology) page', (p) => {
+//     p.play({ command: 'openHomePage' });
+// });
+
+
+// const confirmation = context(() =>{
+//     intent('yes', async(p) =>{
+//         for(let i=0; i<savedArticles.length; i++){
+//             p.play({ command : 'highlight', article: savedArticles[i]});
+//             p.play(`${savedArticles[i].title}`);
+//         }
+//     })
+    
+//    intent('no', (p) =>{
+//         p.play('Sure, Sounds good to me')
+//     })
+// })
+
+// intent('open (the|) (article|) (number|) $(number* (.*))', (p) =>{
+//     if(p.number.value){
+//         p.play({command:'open' , number: p.number.value, articles: savedArticles})
+//     }
+// })
+
+// intent('(go|) back', (p) => {
+//     p.play('Sure, going back');
+//     p.play({ command: 'newsHeadlines', articles: []})
+// })
+
+// intent('give (me|) (the|) instructions ', (p) => {
+   
+//         p.play({ command:'instructions'})
+    
+// })
