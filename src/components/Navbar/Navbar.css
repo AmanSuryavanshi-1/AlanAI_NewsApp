@@ -1,53 +1,83 @@
-/* Navbar container */
-.navbar {
-    background-color: #343a40;
-    padding: 1rem;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-container {
+  display: grid;
+  grid-template-columns: 0.5fr auto;
+  align-items: center;
+  background-color: #343a40;
+  padding: 1rem;
+}
+
+.home{
+  margin: 8px;
+}
+.navbar-brand img {
+  height: 50px;
+  width: auto;
+}
+
+.navbar-toggler {
+  display: none;
+  cursor: pointer;
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.navbar-links ul {
+  list-style: none;
+  margin: 0 ;
+  padding: 0;
+  display: flex;
+  /* margin-right : 10%; */
+}
+
+.navbar-links li {
+  margin-right: 1rem;
+  padding: 0 10px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-links.show {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  background-color: #343a40;
+  width: 100%;
+  padding: 1rem; /* Add padding to the mobile menu */
+  box-sizing: border-box; /* Include padding in the total width */
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
   }
-  
-  /* Navbar brand link */
-  .navbar-brand {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-  
-  /* Navbar brand image */
-  .navbar-brand img {
-    height: 40px;
-  }
-  
-  /* Navbar toggler icon */
+
   .navbar-toggler {
-    border: none;
-    color: white;
+    display: block;
   }
-  
-  /* Navbar navigation links */
-  .navbar-nav {
-    list-style-type: none;
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-links.show {
     display: flex;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
     align-items: center;
-    padding: 0;
   }
-  
-  .nav-item {
-    margin-right: 1rem;
-  }
-  
-  .nav-link {
-    color: white;
-    text-decoration: none;
-  }
-  
-  /* Adjustments for smaller screens */
-  @media (max-width: 768px) {
-    .navbar-brand {
-      font-size: 1.2rem;
-    }
-  
-    .nav-item {
-      margin-right: 0.5rem;
-    }
-  }
-  
+}

@@ -2,7 +2,7 @@ import React,{ useEffect,useState } from 'react'
 import alanBtn from '@alan-ai/alan-sdk-web'
 import NewsCards from './components/NewsCards/NewsCards';
 import wordsToNumbers from 'words-to-numbers';
-import './styles.css'
+import './App.css'
 import img from './news.png'
 
 import { BrowserRouter } from "react-router-dom";

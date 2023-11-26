@@ -19,7 +19,7 @@ h1{
   font-family: 'Cinzel', serif;
 }
 body {
-  background: #f2f2f2; /* Light gray background */
+  background: blanchedalmond; /* Light gray background */
   color: #333; /* Dark gray text color */
   font-size: 16px;
   line-height: 1.6;
@@ -40,7 +40,7 @@ body {
   border-radius: 10px;
   color: #fff; /* White text color */
   background-color: #2196f3; /* Blue background color */
-  margin: 10px;
+  margin: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
   transition: background-color 0.3s ease-in-out;
 }
@@ -60,19 +60,20 @@ body {
   background-color: #4db5ff; /* Light blue background for logo container */
   padding: 20px;
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  justify-content: center; /* Center elements vertically */
+  flex-direction: row; /* Stack elements vertically */
+  /* justify-content: start; Center elements vertically */
   align-items: center;
   margin: 0 80px;
-  margin-top: 6%;
-  margin-bottom: 1.5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
   border-radius: 10px;
   box-shadow: 3px 10px 6px rgba(0, 0, 0, 0.33);
 }
 
 /* Adjust spacing for h1 element within logoContainer */
 .logoContainer h1 {
-  margin-top: 10px; /* Adjust as needed */
+  margin-top: 10px; 
+  margin-left: 30%;
 }
 
 .newsLogo {
