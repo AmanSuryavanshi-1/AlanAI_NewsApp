@@ -7,7 +7,9 @@ body {
   display: grid;
   grid-template-columns: 0.5fr auto;
   align-items: center;
-  background-color: #343a40;
+  /* background-color: #315731; */
+  /* background-color:#F96167; */
+  background: #FDF8F0;
   padding: 1rem;
 }
 
@@ -45,6 +47,7 @@ body {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  color: #F0122D;
 }
 
 .navbar-links.show {

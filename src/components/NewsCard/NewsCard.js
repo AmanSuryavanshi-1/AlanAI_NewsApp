@@ -1,65 +1,31 @@
 import React from 'react';
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, Button } from '@material-ui/core';
-import './style'; // Assuming you have a CSS file for additional styling
+import './style.css';
 
 const NewsItem = (props) => {
-  const { title, description, imageUrl, newsUrl, author, date, source, i, activeArticle } = props;
-
-  const cardStyle = {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    position: 'absolute',
-    right: '0',
-  };
-
-  const badgeStyle = {
-    backgroundColor: '#dc3545',
-    color: '#fff',
-    borderRadius: '20px',
-    padding: '5px 10px',
-  };
-
-  const card = {
-    height: '500px',
-  };
-
-  const image = {
-    height: '250px',
-  };
+  const { title, description, imageUrl, newsUrl, source, i } = props;
 
   return (
-    <div className={`my-3 ${activeArticle === i ? 'active' : ''}`}>
-      <Card className="card" style={card}>
-        <CardActionArea href={newsUrl} target="_blank">
-          <CardMedia className="card-img-top" style={image} image={imageUrl || 'https://i.ytimg.com/vi/3LgKoQByVQE/maxresdefault.jpg'} />
-          <div style={cardStyle}>
-            <span className="badge" style={badgeStyle}>
-              {source}
-            </span>
-          </div>
-          <CardContent>
-            <Typography variant="h5" component="h2">
-              {title}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {description}...
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary" href={newsUrl} target="_blank">
-            Read More
-          </Button>
-          <Typography variant="h5" color="textSecondary">
-            {i + 1}
-          </Typography>
-        </CardActions>
-      </Card>
+    <div className="news">
+      <span className="badge">{source}</span>
+      <div href={newsUrl} target="_blank" className="newsLink">
+        <img src={imageUrl || 'https://i.ytimg.com/vi/3LgKoQByVQE/maxresdefault.jpg'} alt={title} className="newsImage" />
+        <div className="newsDetails">
+          <h4 className="newsTitle">{title}</h4>
+          <p className="newsDescription">{description}...</p>
+        </div>
+      </div>
+      {/* <div className="newsActions">
+        <span className="newsIndex">{i + 1}</span>
+      </div> */}
+      <a href={newsUrl} target="_blank" className="readMoreLink">
+          Read More
+        </a>
     </div>
   );
 };
 
 export default NewsItem;
+
 
 // import { Card,CardActionArea, CardActions, CardContent, CardMedia, Typography,Button } from '@material-ui/core'
 // import React from 'react'

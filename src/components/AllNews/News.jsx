@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import NewsItem from '../NewsCard/NewsCard';
-// import Spinner from './Spinner'; 
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroll-component';
-// import './Navbar.css';
+import './News.css';
 
 const News = (props) => {
   const capitalizeFirstLetter = (string) => {
@@ -19,7 +18,7 @@ const News = (props) => {
     props.setProgress(10);
     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
     try {
-      setLoading(true); 
+      setLoading(true);
       let res = await fetch(url);
       props.setProgress(30);
       let data = await res.json();
@@ -57,34 +56,22 @@ const News = (props) => {
 
   return (
     <>
-      <h1
-        className="text-center"
-        style={{
-          margin: '1em',
-          marginTop: '2.7em',
-          color: 'white',
-          textShadow: '5px 5px 5px black',
-          letterSpacing: '2px',
-        }}
-      >
-        <strong>AI NewsMate - Top {capitalizeFirstLetter(props.category)} Headlines</strong>
+      <h1 className="text-center">
+        AI NewsMate : Top {capitalizeFirstLetter(props.category)} Headlines
       </h1>
-
-      {/* {loading && <Spinner />} */}
 
       <InfiniteScroll
         dataLength={articles.length}
         next={fetchMoreData}
         hasMore={articles.length !== totalResults}
-        // loader={<Spinner />}
       >
-        <div className="row">
+        <div className="main">
           {articles.map((element) => {
             return (
-              <div className="col-md-4" key={element.url}>
+              <div className="newsItem" key={element.url}>
                 <NewsItem
                   title={element.title ? element.title.slice(0, 80) : ' '}
-                  description={element.description ? element.description.slice(0, 100) : ' '}
+                  description={element.description ? element.description.slice(0, 180) : ' '}
                   imageUrl={element.urlToImage}
                   newsUrl={element.url}
                   author={element.author}

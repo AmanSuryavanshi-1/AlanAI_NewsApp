@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       <Link className="navbar-brand" to="/">
-        <img src={logo} alt="news" />
+        <img src={logo} alt="news" style={{ filter:'invert(24%) sepia(86%) saturate(7422%) hue-rotate(346deg) brightness(95%) contrast(98%)' }}/>
       </Link>
       <button className="navbar-toggler" onClick={handleToggleMenu} aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
@@ -25,7 +25,7 @@ const Navbar = () => {
         <ul>
           <li>
             <Link to="/">
-              <img src={homeImage} alt="home" />
+              <img src={homeImage} alt="home" style={{ filter:'invert(24%) sepia(86%) saturate(7422%) hue-rotate(346deg) brightness(95%) contrast(98%)' }}/>
               <span className='home'>Home</span> 
             </Link>
           </li>

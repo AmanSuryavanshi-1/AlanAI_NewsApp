@@ -19,7 +19,9 @@ h1{
   font-family: 'Cinzel', serif;
 }
 body {
-  background: blanchedalmond; /* Light gray background */
+  /* background: #8DB48E;  */
+  /* background:  #FEE715; */
+  background:#FDF8F0;
   color: #333; /* Dark gray text color */
   font-size: 16px;
   line-height: 1.6;
