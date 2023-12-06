@@ -5,16 +5,16 @@ body {
 
 .navbar-container {
   display: grid;
-  grid-template-columns: 0.5fr auto;
+  grid-template-columns: 0.8fr auto;
   align-items: center;
-  /* background-color: #315731; */
-  /* background-color:#F96167; */
   background: #FDF8F0;
   padding: 1rem;
 }
 
 .home{
   margin: 8px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
 }
 .navbar-brand img {
   height: 50px;
@@ -44,12 +44,31 @@ body {
 }
 
 .navbar-links a {
+  font-family: 'Cinzel', serif;
   text-decoration: none;
-  color: white;
   font-weight: bold;
+  letter-spacing: 2px;
   color: #F0122D;
+  padding: 15px;
+  margin: 2px;
+  display: inline-block; 
+  box-sizing: border-box;
+  border: 0.01em solid transparent; 
+  /* border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%; 
+  transition: border 0.5s ease-in-out;*/
+  border-radius: 20px;
+  transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
 }
-
+.navbar-links a:hover {
+  background-color: #f9ecec;
+  border: 0.01em solid #924b4b;
+  /* border-style: solid;
+  border-width: 0.1em;
+  border-color: #581616; */
+}
 .navbar-links.show {
   display: flex;
   flex-direction: column;

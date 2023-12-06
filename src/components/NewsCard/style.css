@@ -5,14 +5,13 @@
     transition: transform 0.3s ease-in-out;
     height: 80vh;
     /* background: #d1efd3; */
-    /* background:#F96167; */
-    background: #f4afb7;
-
+    background: #f8c9ce;
 } 
-  .newsItem:hover {
-    transform: scale(1.01);
-  }
 
+.newsItem:hover {
+  transition: box-shadow 1s ease;
+  box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.4);
+}
 
   
   .newsLink {
@@ -36,19 +35,27 @@
     background-color: #dc3545;
     color: #fff;
     border-radius: 20px;
-    padding: 8px 15px;
+    padding: 10px 15px;
     position: absolute;
+    z-index: 1;
+    transition: transform 1s ease;
+    transform: translateY(-30%);
   }
-  
+  .newsItem:hover .badge {
+    transform: translateY(-30%) translateX(-20%); /* Shift badge to the left by 50% of its width */
+  }
   .newsTitle {
     padding: 0.5rem 0;
     margin: 0;
+    font-size: larger;
+    font-weight: 500;
   }
   
   .newsDescription {
     margin: 0;
     padding: 10px;
     max-height: 120px;
+    font-size: medium;
   }
   
   /* .newsActions {
@@ -65,13 +72,16 @@
     color: #fff;
     border-radius: 5px;
     padding: 8px 15px;
+    font-weight: 500;
   }
   
-  .readMoreLink:hover{
-    background-color:#ba1828;
-    color: black;
+  .readMoreLink:hover {
+    transition: color 1s ease-in-out, background 1s ease-in-out;
+    background: #ba1828;
+    color: #989696;
   }
+  
   .newsIndex {
-    color: #6c757d;
+    color: #919191;
   }
   

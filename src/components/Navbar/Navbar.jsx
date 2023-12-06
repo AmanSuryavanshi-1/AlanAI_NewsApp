@@ -25,7 +25,7 @@ const Navbar = () => {
         <ul>
           <li>
             <Link to="/">
-              <img src={homeImage} alt="home" style={{ filter:'invert(24%) sepia(86%) saturate(7422%) hue-rotate(346deg) brightness(95%) contrast(98%)' }}/>
+              {/* <img src={homeImage} alt="home" style={{ filter:'invert(24%) sepia(86%) saturate(7422%) hue-rotate(346deg) brightness(95%) contrast(98%)' }}/> */}
               <span className='home'>Home</span> 
             </Link>
           </li>
