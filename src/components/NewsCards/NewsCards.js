@@ -1,6 +1,5 @@
 import React from 'react'
 import NewsCard from '../NewsCard/NewsCard'
-import {Grid, Grow, Typography} from '@material-ui/core'
 import './styles.css'
 
 const infoCards = [
@@ -23,45 +22,44 @@ const infoCards = [
   },
 ];
 
-const NewsCards = ({articles, activeArticle}) => {
-  if(!articles.length){
-    return(
-      <Grow in>
-      <Grid className="container" container alignItems="stretch" spacing={2}>
-      {infoCards.map((infoCard, i) => (
-            <Grid key={i} item xs={12} sm={6} md={4} lg={3} className="infoCard">
-              <div className="card">
-                <Typography className="content" style={{color: "rgb(255, 255, 255)",fontSize: 18,fontFamily:'Cinzel', textShadow: "5px 5px 5px #001C30"}} variant='h6'>{infoCard.title}</Typography>
-                {infoCard.info ? (
-  <Typography className="content" variant='h6' style={{ fontSize: 15, color:'black',fontFamily: "'Poppins', sans-serif" }}>
-                    <strong style={{color:'white'}}>{infoCard.title.split(' ')[2]}:</strong>
-                <hr />                   
-                    <br />
-                    {infoCard.info}
-                  </Typography>
-                ) : null}
-                <Typography className="content" variant='h6' style={{ fontSize: 15, color:'black',fontFamily: "Poppins, cursive", fontWeight:800, color:'rgb(216, 216, 216)' }}>
-                  <hr /> Try Saying: <br />
-                  <i>{infoCard.text}</i>
-                </Typography>
+const NewsCards = ({ articles, activeArticle }) => {
+  if (!articles.length) {
+    return (
+      <div className="container">
+        {infoCards.map((infoCard, i) => (
+          <div key={i} className="infoCard">
+            <div className="card">
+              <div className="content" style={{ color: 'rgb(255, 255, 255)', fontSize: 18, fontFamily: 'Cinzel', textShadow: '5px 5px 5px #001C30' }}>
+                {infoCard.title}
               </div>
-            </Grid>
-          ))}
-      </Grid> 
-    </Grow>
-    )
+              {infoCard.info ? (
+                <div className="content" style={{ fontSize: 15, color: 'black', fontFamily: "'Poppins', sans-serif" }}>
+                  <strong style={{ color: 'white' }}>{infoCard.title.split(' ')[2]}:</strong>
+                  <hr />
+                  <br />
+                  {infoCard.info}
+                </div>
+              ) : null}
+              <div className="content" style={{ fontSize: 15, color: 'black', fontFamily: "Poppins, cursive", fontWeight: 800, color: 'rgb(216, 216, 216)' }}>
+                <hr /> Try Saying: <br />
+                <i>{infoCard.text}</i>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
   }
-  return (
-    <Grow in>
-      <Grid className="container" container alignItems="stretch" spacing={3}>
-      {articles.map((article, i)=>(
-        <Grid item xs={12} sm={6} md={4} lg={3} style={{display:'flex'}} >
-            <NewsCard article={article} activeArticle={activeArticle} i={i}/>
-        </Grid>
-      ))} 
-      </Grid>
-    </Grow>
-  )
-}
 
-export default NewsCards
+  return (
+    <div className="container">
+      {articles.map((article, i) => (
+        <div key={i} style={{ display: 'flex' }}>
+          <NewsCard article={article} activeArticle={activeArticle} i={i} />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default NewsCards;

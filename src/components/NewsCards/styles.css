@@ -2,8 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
 
 .container{
-  padding-left: 11%;
-  /* color: black; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create four equal-width columns */
+  gap: 20px; /* Adjust the gap between cards as needed */
+  justify-content: center;
+  align-items: center;
+  /* height: 50vh; */
 }
 .card {
   display: flex;
@@ -11,11 +15,12 @@
   justify-content: space-between;
   align-items: center;
   width: 105%;
-  height: 45vh;
+  height: 55vh;
   border-radius: 10px;
   color: black;
   background-color: #2196f3;
   color: rgb(216, 216, 216);
+  box-sizing: border-box;
 }
 
 .content {
@@ -39,4 +44,3 @@
   /* background-color: #000001; */
   cursor: pointer;
 }
-
