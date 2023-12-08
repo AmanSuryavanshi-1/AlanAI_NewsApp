@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
 
-.container{
+.info_container{
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Create four equal-width columns */
-  gap: 20px; /* Adjust the gap between cards as needed */
-  justify-content: center;
-  align-items: center;
-  /* height: 50vh; */
+  grid-template-columns: repeat(4, 1fr); /* Create four equal-width columns */
+  gap: 20px;
+  max-width: 90vw;
+  margin: 0 3em;
 }
 .card {
   display: flex;

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';  // Import your CSS file for styling
-import logo from '../main logo.png';
-import homeImage from '../home.png';
+import logo from '../Images/ASlogo.png';
+import homeImage from '../Images/home.png';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);

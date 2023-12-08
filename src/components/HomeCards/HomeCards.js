@@ -1,6 +1,6 @@
 import React from 'react'
 import NewsCard from '../NewsCardVA/NewsCard'
-import './styles.css'
+import './HomeCards.css'
 
 const infoCards = [
   {  title: 'Latest News', text: 'Give me the latest news' },
@@ -25,7 +25,7 @@ const infoCards = [
 const NewsCards = ({ articles, activeArticle }) => {
   if (!articles.length) {
     return (
-      <div className="container">
+      <div className="info_container">
         {infoCards.map((infoCard, i) => (
           <div key={i} className="infoCard">
             <div className="card">
@@ -52,9 +52,9 @@ const NewsCards = ({ articles, activeArticle }) => {
   }
 
   return (
-    <div className="container">
+    <div className="main">
       {articles.map((article, i) => (
-        <div key={i} style={{ display: 'flex' }}>
+        <div className='newsItem'key={i} style={{ display: 'flex' }}>
           <NewsCard article={article} activeArticle={activeArticle} i={i} />
         </div>
       ))}

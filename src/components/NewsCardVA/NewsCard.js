@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createRef } from 'react';
 import './NewsCard.css'; // Import your own stylesheet
-
+import newsCover from '../Images/newsCover.jpg';
 const NewsCard = ({ article: { description, publishedAt, source, title, url, urlToImage }, i, activeArticle }) => {
   const [elementRefs, setElementRefs] = useState([]);
   const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50);
@@ -14,23 +14,21 @@ const NewsCard = ({ article: { description, publishedAt, source, title, url, url
   }, []);
 
   useEffect(() => {
-    if (i === activeArticle && elementRefs[activeArticle]) {
+    if (i === activeArticle && elementRefs[activeArticle] && elementRefs[activeArticle].current) {
       scrollToRef(elementRefs[activeArticle]);
     }
   }, [i, activeArticle, elementRefs]);
 
   return (
-    <div>
-      <div ref={elementRefs[i]} className={`news ${activeArticle === i ? 'activeCard' : ''}`}>
-        <a href={url} target="_blank" className="newsLink">
-          <img className="newsImage" src={urlToImage || 'https://i.ytimg.com/vi/3LgKoQByVQE/maxresdefault.jpg'} alt={title} />
+    <div className='news'>
+        <span className="badge">{source.name}</span>
+        <img className="newsImage" src={urlToImage || newsCover} alt={title} />
+      <div className={`newsActive ${activeArticle === i ? 'activeCard' : ''}`}>
           <div className="newsDetails">
-            <p className="newsDate">{(new Date(publishedAt)).toDateString()}</p>
-            <span className="badge">{source.name}</span>
             <h4 className="newsTitle">{title}</h4>
-            <p className="newsDescription">{description}</p>
+            <p className="newsDescription">{description}...</p>
           </div>
-        </a>
+          <p className="newsDate">{(new Date(publishedAt)).toDateString()}</p>
         <div className="newsActions">
           <a href={url} target="_blank" className="readMoreLink">
             Read More

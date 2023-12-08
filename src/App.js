@@ -1,6 +1,6 @@
 import React,{ useEffect,useState } from 'react'
 import alanBtn from '@alan-ai/alan-sdk-web'
-import NewsCards from './components/NewsCards/NewsCards';
+import NewsCards from './components/HomeCards/HomeCards.js';
 import wordsToNumbers from 'words-to-numbers';
 import './App.css'
 import img from './news.png'
