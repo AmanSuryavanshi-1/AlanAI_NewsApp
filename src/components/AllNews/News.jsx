@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import NewsItem from '../NewsCard/NewsCard';
+import NewsItem from '../NewsItem/NewsItem';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import './News.css';

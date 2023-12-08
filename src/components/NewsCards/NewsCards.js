@@ -1,5 +1,5 @@
 import React from 'react'
-import NewsCard from '../NewsCard/NewsCard'
+import NewsCard from '../NewsCardVA/NewsCard'
 import './styles.css'
 
 const infoCards = [
