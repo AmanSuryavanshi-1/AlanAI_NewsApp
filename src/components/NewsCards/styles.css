@@ -3,7 +3,7 @@
 
 .container{
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Create four equal-width columns */
+  grid-template-columns: repeat(3, 1fr); /* Create four equal-width columns */
   gap: 20px; /* Adjust the gap between cards as needed */
   justify-content: center;
   align-items: center;

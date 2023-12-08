@@ -1,49 +1,45 @@
-import { Card,CardActionArea, CardActions, CardContent, CardMedia, Typography,Button } from '@material-ui/core'
-import React from 'react'
-// import classNames from 'classnames';
-import useStyles from './style'
-import { useState,useEffect, createRef } from 'react'
+import React, { useState, useEffect, createRef } from 'react';
+import './NewsCard.css'; // Import your own stylesheet
 
 const NewsCard = ({ article: { description, publishedAt, source, title, url, urlToImage }, i, activeArticle }) => {
-  const classes = useStyles();
-
-  //implementing auto scroll
   const [elementRefs, setElementRefs] = useState([]);
-  const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop -50);
-  // this is to set refs for all elements
+  const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50);
+
   useEffect(() => {
     setElementRefs((refs) =>
       Array(20)
         .fill()
-        .map((_, j) => refs[j] || createRef()));
+        .map((_, j) => refs[j] || createRef())
+    );
   }, []);
 
   useEffect(() => {
-    if(i===activeArticle && elementRefs[activeArticle]){
+    if (i === activeArticle && elementRefs[activeArticle]) {
       scrollToRef(elementRefs[activeArticle]);
     }
   }, [i, activeArticle, elementRefs]);
+
   return (
     <div>
-      <Card ref={elementRefs[i]} className={ activeArticle === i ? classes.activeCard: classes.card}>
-        <CardActionArea href={url} target="_blank"> 
-          <CardMedia className={classes.media} image={urlToImage || 'https://i.ytimg.com/vi/3LgKoQByVQE/maxresdefault.jpg'}/>
-          <div className={classes.details}>
-            <Typography variant="body2" color="textSecondary" component="h2">{(new Date(publishedAt)).toDateString()}</Typography>
-            <Typography variant="body2" color="textSecondary" component="h2">{source.name}</Typography>
+      <div ref={elementRefs[i]} className={`news ${activeArticle === i ? 'activeCard' : ''}`}>
+        <a href={url} target="_blank" className="newsLink">
+          <img className="newsImage" src={urlToImage || 'https://i.ytimg.com/vi/3LgKoQByVQE/maxresdefault.jpg'} alt={title} />
+          <div className="newsDetails">
+            <p className="newsDate">{(new Date(publishedAt)).toDateString()}</p>
+            <span className="badge">{source.name}</span>
+            <h4 className="newsTitle">{title}</h4>
+            <p className="newsDescription">{description}</p>
           </div>
-          <Typography className={classes.title} gutterBottom variant='h5'>{title}</Typography>
-          <CardContent>
-            <Typography variant='body2' color="textSecondary" component="p">{description}123</Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions className={classes.CardActions}>
-        <Button size="small" color="primary">Read More</Button>
-        <Typography variant='h5' color='textSecondary'>{i+1}</Typography>
-        </CardActions>
-      </Card>
+        </a>
+        <div className="newsActions">
+          <a href={url} target="_blank" className="readMoreLink">
+            Read More
+          </a>
+          <span className="newsIndex">{i + 1}</span>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default NewsCard
+export default NewsCard;

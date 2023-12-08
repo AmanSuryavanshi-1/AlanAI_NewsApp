@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+import './NewsItem.css';
 
 const NewsItem = (props) => {
   const { title, description, imageUrl, newsUrl, source, i } = props;
