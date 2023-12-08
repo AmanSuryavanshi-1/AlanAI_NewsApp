@@ -80,7 +80,8 @@ const App = () => {
 
       <div>
         <Routes>
-        <Route exact path="/" element={<div><div className="logoContainer">
+        <Route exact path="/" element={<div>
+        <div className="logoContainer">
         <img src="https://cdn.dribbble.com/users/61571/screenshots/727897/news-app-icon1.png" className="newsLogo" alt="newsimg"/>
         <h1>AI NewsMate</h1>
         </div>

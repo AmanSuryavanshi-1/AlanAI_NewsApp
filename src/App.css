@@ -41,14 +41,14 @@ body {
   padding: 20px;
   border-radius: 10px;
   color: #fff; /* White text color */
-  background-color: #2196f3; /* Blue background color */
+  background-color: #dd3d4d;
   margin: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
   transition: background-color 0.3s ease-in-out;
 }
 
 .card:hover {
-  background-color: #1565c0; /* Darker blue on hover */
+  background-color: #d7515f;
 }
 
 .infoContainer {
@@ -59,7 +59,7 @@ body {
 }
 
 .logoContainer {
-  background-color: #4db5ff; /* Light blue background for logo container */
+  background: #f8c9ce;
   padding: 20px;
   display: flex;
   flex-direction: row; /* Stack elements vertically */
@@ -69,7 +69,7 @@ body {
   margin-top: 2%;
   margin-bottom: 2%;
   border-radius: 10px;
-  box-shadow: 3px 10px 6px rgba(0, 0, 0, 0.33);
+  box-shadow: 3px 10px 6px#dc3545;
 }
 
 /* Adjust spacing for h1 element within logoContainer */
@@ -83,7 +83,7 @@ body {
   border-radius: 50%;
   padding: 10px;
   margin: 10px;
-  background-color: #1565c0;
+  background-color: #dc3545;
   transition: transform 0.3s ease-in-out;
 }
 
