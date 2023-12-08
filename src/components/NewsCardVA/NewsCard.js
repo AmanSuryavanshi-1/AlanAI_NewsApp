@@ -26,7 +26,7 @@ const NewsCard = ({ article: { description, publishedAt, source, title, url, url
       <div className={`newsActive ${activeArticle === i ? 'activeCard' : ''}`}>
           <div className="newsDetails">
             <h4 className="newsTitle">{title}</h4>
-            <p className="newsDescription">{description}...</p>
+            <p className="newsDescription">{description.slice(0, 180)}...</p>
           </div>
           <p className="newsDate">{(new Date(publishedAt)).toDateString()}</p>
         <div className="newsActions">

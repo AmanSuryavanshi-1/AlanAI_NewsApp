@@ -1,4 +1,4 @@
-.newsContainer {
+/* .newsContainer {
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
     height: 90vh;
@@ -84,4 +84,7 @@
   .activeCard {
     color:white;
   }
-  
+   */
+   .activeCard {
+    color:white;
+  }

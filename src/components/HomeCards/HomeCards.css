@@ -4,17 +4,17 @@
 .info_container{
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Create four equal-width columns */
-  gap: 20px;
-  max-width: 90vw;
-  margin: 0 3em;
+  margin: 0 4rem;
+  /* max-width: 100vw; */
+
 }
 .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 105%;
-  height: 55vh;
+  width: 90%;
+  height: 53vh;
   border-radius: 10px;
   color: black;
   background-color: #2196f3;
@@ -23,7 +23,7 @@
 }
 
 .content {
-  margin: 10px;
+  margin: 5px;
 }
 
 .content_heading {
