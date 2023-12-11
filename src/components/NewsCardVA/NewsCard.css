@@ -1,14 +1,4 @@
-/* .newsContainer {
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    height: 90vh;
-    background: #f8c9ce;
-    margin: 1.5%;
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    overflow: hidden;
-  }
+/* 
 
   .news:hover {
     transition: box-shadow 1s ease;
@@ -19,17 +9,9 @@
     text-decoration: none;
     color: inherit;
   }
+
   
-  .newsImage {
-    width: 100%;
-    height: 34vh;
-    object-fit: cover;
-  }
-  
-  .newsDetails {
-    padding: 1rem;
-    height: 40vh;
-  }
+ 
   
   .badge {
     background-color: #dc3545;
@@ -46,19 +28,7 @@
     transform: translateY(-30%) translateX(-20%);
   }
   
-  .newsTitle {
-    padding: 0.5rem 0;
-    margin: 0;
-    font-size: larger;
-    font-weight: 500;
-  }
-  
-  .newsDescription {
-    margin: 0;
-    padding: 10px;
-    max-height: 120px;
-    font-size: medium;
-  }
+ 
   
   .readMoreLink {
     display: flex;
@@ -86,5 +56,42 @@
   }
    */
    .activeCard {
-    color:white;
+    color: rgb(231, 115, 115);
+  
+    .badge {
+      transform: translateY(-30%) translateX(-20%);
+    }
   }
+  .newsCont{
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    height: 92vh;
+    /* background: #d1efd3; */
+    background: #f8c9ce;
+} 
+  .newsImg {
+    width: 100%;
+    height: 33vh;
+    object-fit: cover;
+  }
+  .newsDetail1{
+    padding: 1rem;
+    height: 46.5vh;
+
+  }
+  .newsT {
+    margin: 0;
+    font-size: larger;
+    font-weight: 500;
+    height: 15vh;
+    /* max-height: 18vh; */
+  }
+  
+  .newsDesc {
+    margin: 0;
+    padding: 15px 2px;
+    font-size: medium;
+    height: 15vh;
+  }
+  

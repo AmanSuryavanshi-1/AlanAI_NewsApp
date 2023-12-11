@@ -14,22 +14,23 @@ const NewsCard = ({ article: { description, publishedAt, source, title, url, url
   }, []);
 
   useEffect(() => {
-    if (i === activeArticle && elementRefs[activeArticle] && elementRefs[activeArticle].current) {
+    if(i===activeArticle && elementRefs[activeArticle]){
       scrollToRef(elementRefs[activeArticle]);
     }
   }, [i, activeArticle, elementRefs]);
 
   return (
-    <div className='news'>
+      <div ref={elementRefs[i]} className={`newsActive ${activeArticle === i ? 'activeCard' : ''}`}>
+        <div className='newsCont'>
         <span className="badge">{source.name}</span>
-        <img className="newsImage" src={urlToImage || newsCover} alt={title} />
-      <div className={`newsActive ${activeArticle === i ? 'activeCard' : ''}`}>
-          <div className="newsDetails">
-            <h4 className="newsTitle">{title}</h4>
-            <p className="newsDescription">{description.slice(0, 180)}...</p>
+        <img className="newsImg" src={urlToImage || newsCover} alt={title} />
+          <div className="newsDetail1">
+            <h4 className="newsT">{title}</h4>
+            <p className="newsDesc">{description}...</p>
           </div>
           <p className="newsDate">{(new Date(publishedAt)).toDateString()}</p>
         <div className="newsActions">
+        {/* eslint-disable-next-line */}
           <a href={url} target="_blank" className="readMoreLink">
             Read More
           </a>

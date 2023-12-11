@@ -1,10 +1,8 @@
-/* Component Styles */
 .news{
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
     height: 80vh;
-    /* background: #d1efd3; */
     background: #f8c9ce;
 } 
 
@@ -60,12 +58,7 @@
     text-justify: inter-word;
   }
   
-  /* .newsActions {
-    padding: 0.5rem 1rem;
-    display: flex;
-    justify-content: space-between;
-  } */
-  
+
   .readMoreLink {
     display: flex;
     justify-content: center;
@@ -93,8 +86,6 @@
     border-radius: 10px;
     padding: 2px 10px;
     display: flex;
-    justify-content: end;
-    /* font-weight: 600;
-    font:bolder; */
+    justify-content: flex-end;
     font-size: small;
   }
