@@ -35,8 +35,10 @@
   
  
   
-  /* Responsive layout */
   @media (max-width: 768px) {
+    .text-center{
+      padding-top: 8rem;
+    }
     .newsItem {
       flex: 0 0 48%;
     }

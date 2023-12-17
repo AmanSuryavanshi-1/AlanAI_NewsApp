@@ -54,7 +54,7 @@
   .activeCard {
     color:white;
   }
-   */
+   */  
    .activeCard {
     color: rgb(231, 115, 115);
   
@@ -95,3 +95,15 @@
     height: 15vh;
   }
   
+  @media (max-width: 768px) {
+    .newsImg {
+      height: 30vh;
+    }
+    .newsCont{
+      height: 95vh;
+  } 
+    .newsDetail1 {
+      height: 50vh;
+    }
+
+  }

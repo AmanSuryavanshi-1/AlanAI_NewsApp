@@ -9,6 +9,7 @@ body {
   align-items: center;
   background: #FDF8F0;
   padding: 1rem;
+  width: 100%;
 }
 
 .home{
@@ -35,7 +36,6 @@ body {
   margin: 0 ;
   padding: 0;
   display: flex;
-  /* margin-right : 10%; */
 }
 
 .navbar-links li {
@@ -75,23 +75,36 @@ body {
   position: absolute;
   top: 70px;
   left: 0;
-  background-color: #343a40;
+  background-color: #f39aa7;
   width: 100%;
-  padding: 1rem; /* Add padding to the mobile menu */
-  box-sizing: border-box; /* Include padding in the total width */
+  padding: 1rem; 
+  box-sizing: border-box; 
 }
 
 @media (max-width: 768px) {
   body {
     overflow-x: hidden;
   }
-
+  .navbar-container {
+    position: fixed;
+    z-index: 999;
+    margin-bottom: 2rem;
+  }
   .navbar-toggler {
     display: block;
   }
 
   .navbar-links {
     display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: #343a40;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
   }
 
   .navbar-links.show {

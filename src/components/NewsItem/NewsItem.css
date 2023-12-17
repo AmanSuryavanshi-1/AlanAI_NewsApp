@@ -10,12 +10,6 @@
   transition: box-shadow 1s ease;
   box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.4);
 }
-
-  
-  /* .newsLink {
-    text-decoration: none;
-    color: inherit;
-  } */
   
   .newsImage {
     width: 100%;
@@ -88,4 +82,21 @@
     display: flex;
     justify-content: flex-end;
     font-size: small;
+  }
+
+  @media (max-width: 768px) {
+    .newsTitle {
+      height: 18vh;
+    }
+    
+    .newsDescription {
+      height: 12vh;
+    }
+    .newsDetails{
+height: 48vh;
+    }
+    .news{
+      height: 95vh;
+  } 
+  
   }
