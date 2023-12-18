@@ -3,7 +3,7 @@ import NewsCard from '../NewsCardVA/NewsCard'
 import './HomeCards.css'
 
 const infoCards = [
-  {  title: 'Latest News', text: 'Give me the latest news' },
+  {  title: 'Latest News', text: 'Give me latest news' },
   {
     title: 'News by Categories',
     info:
